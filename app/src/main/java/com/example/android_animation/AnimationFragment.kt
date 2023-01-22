@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -61,7 +62,16 @@ class AnimationFragment : Fragment(R.layout.fragment_animation) {
                 imAndroid.startAnimation(anim)
             }
 
+            bnJson.setOnClickListener {
 
+
+                if(lottie.isAnimating == false){
+                    imAndroid.visibility = View.GONE
+                    lottie.visibility = View.VISIBLE
+                    lottie.playAnimation()
+                }
+
+            }
         }
 
     }
